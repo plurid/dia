@@ -1,0 +1,54 @@
+{
+    "name": "@plurid/dia-storage-google-cloud",
+    "version": "0.0.0",
+    "description": "dia storage for Google Cloud",
+    "keywords": [
+        "dia",
+        "storage",
+        "google",
+        "cloud"
+    ],
+    "author": "ly3xqhl8g9 <ly3xqhl8g9@plurid.com> (https://plurid.com)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/plurid/dia"
+    },
+    "bugs": {
+        "email": "feedback@plurid.com",
+        "url": "https://github.com/plurid/dia/issues"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "homepage": "https://github.com/plurid/dia/blob/master/packages/dia/README.md",
+    "files": [
+        "distribution/"
+    ],
+    "main": "distribution/index.js",
+    "module": "distribution/index.es.js",
+    "jsnext:main": "distribution/index.es.js",
+    "engines": {
+        "node": ">=8",
+        "npm": ">=6"
+    },
+    "scripts": {
+        "clean": "rm -rf ./distribution",
+        "lint": "eslint ./source --ext .ts,.tsx",
+        "start": "yarn clean && rollup -c -w --environment ENV_MODE:local",
+        "build.development": "yarn clean && rollup -c --environment ENV_MODE:local",
+        "build.production": "rollup -c --environment ENV_MODE:production",
+        "build": "yarn clean && yarn build.production",
+        "prepublishOnly": "yarn build"
+    },
+    "devDependencies": {
+        "@google-cloud/storage": "^5.0.1",
+        "@types/react": "^16.9.35",
+        "@typescript-eslint/eslint-plugin": "^3.2.0",
+        "@typescript-eslint/parser": "^3.2.0",
+        "eslint": "^7.2.0",
+        "rollup": "^2.15.0",
+        "rollup-plugin-typescript2": "^0.27.1",
+        "typescript": "^3.9.5"
+    }
+}
