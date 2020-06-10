@@ -2,9 +2,9 @@ import React, {
     useEffect,
 } from 'react';
 
-import {
-    useInView,
-} from 'react-intersection-observer';
+// import {
+//     useInView,
+// } from 'react-intersection-observer';
 
 import { AnyAction } from 'redux';
 import { connect } from 'react-redux';
@@ -37,11 +37,11 @@ export interface StripeOwnProperties extends StripeProperties {
 }
 
 export interface StripeStateProperties {
-    stateIsMobile: boolean;
+    // stateIsMobile: boolean;
 }
 
 export interface StripeDispatchProperties {
-    dispatchSetSection: typeof actions.view.setSection;
+    // dispatchSetSection: typeof actions.view.setSection;
 }
 
 export type StripeComponentProperties = StripeOwnProperties
@@ -63,32 +63,32 @@ const Stripe: React.FC<StripeComponentProperties> = (
         grid,
         link,
 
-        /** state */
-        stateIsMobile,
+        // /** state */
+        // stateIsMobile,
 
-        /** dispatch */
-        dispatchSetSection,
+        // /** dispatch */
+        // dispatchSetSection,
     } = properties;
 
 
-    /** effects */
-    const [stripe, inView, entry] = useInView({
-        /* Optional options */
-        threshold: 0.6,
-        // rootMargin: '100px',
-    });
+    // /** effects */
+    // const [stripe, inView, entry] = useInView({
+    //     /* Optional options */
+    //     threshold: 0.6,
+    //     // rootMargin: '100px',
+    // });
 
 
-    useEffect(() => {
-        if (
-            inView
-            && link
-        ) {
-            dispatchSetSection('#' + link);
-        }
-    }, [
-        inView,
-    ]);
+    // useEffect(() => {
+    //     if (
+    //         inView
+    //         && link
+    //     ) {
+    //         dispatchSetSection('#' + link);
+    //     }
+    // }, [
+    //     inView,
+    // ]);
 
 
     /** render */
@@ -97,7 +97,7 @@ const Stripe: React.FC<StripeComponentProperties> = (
             backgrounded={backgrounded}
             absolute={absolute}
             grid={grid}
-            ref={stripe}
+            // ref={stripe}
         >
             <StyledHeading
                 absolute={absolute}
@@ -139,18 +139,18 @@ const Stripe: React.FC<StripeComponentProperties> = (
 const mapStateToProperties = (
     state: AppState,
 ): StripeStateProperties => ({
-    stateIsMobile: selectors.view.getIsMobile(state),
+    // stateIsMobile: selectors.view.getIsMobile(state),
 });
 
 
 const mapDispatchToProperties = (
     dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ): StripeDispatchProperties => ({
-    dispatchSetSection: (
-        section,
-    ) => dispatch(
-        actions.view.setSection(section),
-    ),
+    // dispatchSetSection: (
+    //     section,
+    // ) => dispatch(
+    //     actions.view.setSection(section),
+    // ),
 });
 
 

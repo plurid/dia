@@ -47,7 +47,7 @@ const Index: React.FC<IndexProperties> = (
     /** render */
     return (
         <StyledIndex>
-            Index
+            Design and Develop a Dimensional Interface Assembling Data and Elements
         </StyledIndex>
     );
 }

@@ -109,7 +109,6 @@ export interface ImageTextBase {
     heading: string[];
     text: string[];
     backgrounded?: boolean;
-    markings?: Markings;
 }
 
 export interface ImageTextReadMore extends ImageTextBase {

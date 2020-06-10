@@ -26,7 +26,7 @@ import selectors from '../../../services/state/selectors';
 export type ImageTextOwnProperties = ImageTextProperties;
 
 export interface ImageTextStateProperties {
-    stateIsMobile: boolean;
+    // stateIsMobile: boolean;
 }
 
 export interface ImageTextDispatchProperties {
@@ -45,8 +45,8 @@ const ImageText: React.FC<ImageTextComponentProperties> = (
         kind,
         backgrounded,
 
-        /** state */
-        stateIsMobile,
+        // /** state */
+        // stateIsMobile,
     } = properties;
 
 
@@ -81,7 +81,7 @@ const ImageText: React.FC<ImageTextComponentProperties> = (
 const mapStateToProperties = (
     state: AppState,
 ): ImageTextStateProperties => ({
-    stateIsMobile: selectors.view.getIsMobile(state),
+    // stateIsMobile: selectors.view.getIsMobile(state),
 });
 
 

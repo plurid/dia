@@ -22,12 +22,7 @@ const Video: React.FC<VideoProperties> = (
     /** render */
     return (
         <StyledVideo>
-            <iframe
-                title="vimeo-player"
-                src="https://player.vimeo.com/video/336812660"
-                frameBorder={0}
-                allowFullScreen={true}
-            />
+
         </StyledVideo>
     );
 }
