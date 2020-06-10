@@ -1,8 +1,19 @@
-import Storage from '@plurid/dia-storage-google-cloud';
+/**
+ * import the `DiaStorage` from
+ *
+ * + @plurid/dia-storage-aws
+ * + @plurid/dia-storage-azure
+ * + @plurid/dia-storage-google-cloud
+ *
+ * create the `diaStorage` object with the adequate credentials
+ * and export it as default.
+ */
+
+import DiaStorage from '@plurid/dia-storage-google-cloud';
 
 
 
-const storage = new Storage({
+const diaStorage = new DiaStorage({
     credentials: {
         projectID: '',
         keys: '',
@@ -10,4 +21,4 @@ const storage = new Storage({
 });
 
 
-export default storage;
+export default diaStorage;
