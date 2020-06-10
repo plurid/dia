@@ -26,7 +26,7 @@ export interface HeroOwnProperties extends HeroProperties {
 }
 
 export interface HeroStateProperties {
-    stateIsMobile: boolean;
+    // stateIsMobile: boolean;
 }
 
 export interface HeroDispatchProperties {
@@ -47,8 +47,8 @@ const Hero: React.FC<HeroComponentProperties> = (
         Element,
         simple,
 
-        /** state */
-        stateIsMobile,
+        // /** state */
+        // stateIsMobile,
     } = properties;
 
 
@@ -87,7 +87,7 @@ const Hero: React.FC<HeroComponentProperties> = (
 const mapStateToProperties = (
     state: AppState,
 ): HeroStateProperties => ({
-    stateIsMobile: selectors.view.getIsMobile(state),
+    // stateIsMobile: selectors.view.getIsMobile(state),
 });
 
 
