@@ -36,7 +36,7 @@ interface ShellStateProperties {
 }
 
 interface ShellDispatchProperties {
-    dispatchSetIsMobile: typeof actions.view.setIsMobile;
+    // dispatchSetIsMobile: typeof actions.view.setIsMobile;
 }
 
 type ShellProperties = ShellOwnProperties
@@ -52,7 +52,7 @@ const Shell: React.FC<ShellProperties> = (
         children,
 
         /** dispatch */
-        dispatchSetIsMobile
+        // dispatchSetIsMobile
     } = properties;
 
 
@@ -72,28 +72,28 @@ const Shell: React.FC<ShellProperties> = (
     }
 
 
-    /** handlers */
-    const setIsMobile = () => {
-        if (window.innerWidth < 900) {
-            dispatchSetIsMobile(true);
-        } else {
-            dispatchSetIsMobile(false);
-        }
-    }
+    // /** handlers */
+    // const setIsMobile = () => {
+    //     if (window.innerWidth < 900) {
+    //         dispatchSetIsMobile(true);
+    //     } else {
+    //         dispatchSetIsMobile(false);
+    //     }
+    // }
 
-    const handleResize = useDebouncedCallback(setIsMobile, 200);
+    // const handleResize = useDebouncedCallback(setIsMobile, 200);
 
 
-    /** effects */
-    useEffect(() => {
-        setIsMobile();
+    // /** effects */
+    // useEffect(() => {
+    //     setIsMobile();
 
-        window.addEventListener('resize', handleResize);
+    //     window.addEventListener('resize', handleResize);
 
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        }
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize);
+    //     }
+    // }, []);
 
 
     /** render */
@@ -111,11 +111,7 @@ const Shell: React.FC<ShellProperties> = (
                 ref={topContainer}
             />
 
-            <Header />
-
             {children}
-
-            <Footer />
         </Context.Provider>
     );
 }
@@ -130,11 +126,11 @@ const mapStateToProperties = (
 const mapDispatchToProperties = (
     dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ): ShellDispatchProperties => ({
-    dispatchSetIsMobile: (
-        isMobile,
-    ) => dispatch(
-        actions.view.setIsMobile(isMobile),
-    ),
+    // dispatchSetIsMobile: (
+    //     isMobile,
+    // ) => dispatch(
+    //     actions.view.setIsMobile(isMobile),
+    // ),
 });
 
 

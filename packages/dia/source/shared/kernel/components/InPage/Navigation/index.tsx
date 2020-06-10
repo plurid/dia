@@ -32,7 +32,7 @@ export interface NavigationOwnProperties extends NavigationProperties {
 }
 
 export interface NavigationStateProperties {
-    stateSection: string;
+    // stateSection: string;
 }
 
 export interface NavigationDispatchProperties {
@@ -51,7 +51,7 @@ const Navigation: React.FC<NavigationComponentProperties> = (
         items,
 
         /** state */
-        stateSection,
+        // stateSection,
     } = properties;
 
 
@@ -62,27 +62,27 @@ const Navigation: React.FC<NavigationComponentProperties> = (
     ] = useState('');
 
 
-    /** effects */
-    useEffect(() => {
-        const handleHashChange = () => {
-            setIsActive(window.location.hash);
-        }
-        handleHashChange();
+    // /** effects */
+    // useEffect(() => {
+    //     const handleHashChange = () => {
+    //         setIsActive(window.location.hash);
+    //     }
+    //     handleHashChange();
 
-        window.addEventListener('hashchange', handleHashChange);
+    //     window.addEventListener('hashchange', handleHashChange);
 
-        return () => {
-            window.removeEventListener('hashchange', handleHashChange);
-        }
-    }, [
-        setIsActive,
-    ]);
+    //     return () => {
+    //         window.removeEventListener('hashchange', handleHashChange);
+    //     }
+    // }, [
+    //     setIsActive,
+    // ]);
 
-    useEffect(() => {
-        setIsActive(stateSection);
-    }, [
-        stateSection,
-    ]);
+    // useEffect(() => {
+    //     setIsActive(stateSection);
+    // }, [
+    //     stateSection,
+    // ]);
 
 
     /** render */
@@ -108,7 +108,7 @@ const Navigation: React.FC<NavigationComponentProperties> = (
 const mapStateToProperties = (
     state: AppState,
 ): NavigationStateProperties => ({
-    stateSection: selectors.view.getSection(state),
+    // stateSection: selectors.view.getSection(state),
 });
 
 

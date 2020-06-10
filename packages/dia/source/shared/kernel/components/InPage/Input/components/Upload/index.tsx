@@ -51,7 +51,6 @@ const Upload: React.FC<UploadProperties> = (
                 </StyledName>
 
                 <StyledSign
-                    theme={theme}
                     value={value}
                 >
                 </StyledSign>

@@ -17,8 +17,6 @@ import {
 import Heading from '../../../Typography/Heading';
 import Paragraph from '../../../Typography/Paragraph';
 
-import ReadMoreButton from '../../../Buttons/ReadMore';
-
 
 
 interface ReadmoreProperties {
@@ -46,7 +44,6 @@ const Readmore: React.FC<ReadmoreProperties> = (
     /** render */
     return (
         <StyledReadmore
-            theme={theme}
             imageLayout={imageLayout}
         >
             <StyledReadmoreText>
@@ -65,9 +62,6 @@ const Readmore: React.FC<ReadmoreProperties> = (
                     })}
                 </div>
 
-                <ReadMoreButton
-                    link={readMoreLink}
-                />
             </StyledReadmoreText>
 
             <StyledReadmoreImage>
